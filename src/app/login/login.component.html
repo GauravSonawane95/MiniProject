@@ -1,0 +1,71 @@
+
+<div class="card text-black my1 mt-3" style="width: 500px; height: 350px;">
+  <div class="card-header">Login</div>
+  <div style="width: 450px;margin: auto;">
+    <form class="example-form" [formGroup]="LoginForm" (ngSubmit)="SaveLogin()">
+      <div class="mb-3">
+        <label for="em1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="em1" formControlName="user_email">
+      </div>
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password</label>
+        <input type="password" class="form-control" id="pwd" formControlName="user_pwd">
+      </div>
+      <div class="gap-2">
+        <button type="submit" class="btn btn-primary m-2">Login</button>
+        <button class="btn btn-secondary m-2" routerLink="/Regi">Sign Up</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+<!-- <div class="example-container" style="margin: auto;">
+    <form [formGroup]="LoginForm" (onSubmit)="save()">
+    <mat-form-field  appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput type="email" class="form-control" placeholder="Enter Email" formControlName="user_email" required>
+       <mat-error *ngIf="user_email.invalid">{{getErrorMessage()}}</mat-error> -->
+<!-- </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="user_pwd" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button> 
+    </mat-form-field>
+    <div>
+    <button mat-raised-button color="primary">Login</button>
+    <button mat-raised-button color="basic" routerLink="Regi">Sign Up</button>
+    </div>
+</form>
+  </div> -->
+  
+  
+  
+  <!-- <div class="card text-white bg-dark mt-3" style="margin: auto;width: 500px; height: 300px;">
+   <div class="card-header">Login</div> 
+   <div style="width: 450px;margin: auto;">
+  <form [formGroup]="LoginForm" (onSubmit)="SaveLogin()">
+    <div  class="form-group">
+      <label for="user_email">Email address</label>
+      <input type="email" class="form-control" id="id1" placeholder="Enter email" formControlName="user_email" required>
+    </div><br>
+    <div class="form-group">
+      <label for="user_pwd">Password</label>
+      <input type="password" class="form-control" id="id2" placeholder="Password" formControlName="user_pwd" required>
+    </div><br>
+    <div style="margin: auto;">
+    <button type="submit" class="btn btn-primary m-2">Login</button>
+    <button class="btn btn-secondary m-2" routerLink="/Regi">Sign Up</button>
+</div>
+  </form>
+</div>
+</div> -->

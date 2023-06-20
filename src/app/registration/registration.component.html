@@ -1,0 +1,79 @@
+<div class="card mt-4 my1 border text-black " style="width: 70%;height: 430px;">
+    <div class="card-header">Sign Up</div>
+    <div style="width: 800px;margin: auto;">
+    <form [formGroup]="signUpForm" (ngSubmit)="save()">
+        <legend class="mt-4">Personal Details</legend>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <label for="user_name">First Name</label>
+                <input type="text" name="user_name" id="id1" class="form-control" formControlName="user_name">
+                <div *ngIf="user_name.touched && user_name.invalid">
+                    <div class="invalid-feedback d-block" *ngIf="user_name.errors?.['required']">
+                        It is required field
+                    </div>
+                    <div class="invalid-feedback d-block" *ngIf="user_name.errors?.['pattern']">
+                        Please enter the valid user_name
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="user_email">Email</label>
+                <input type="text" name="user_email" id="id2" class="form-control" formControlName="user_email">
+                <div *ngIf="user_email?.touched && user_email?.invalid">
+                    <div class="invalid-feedback d-block" *ngIf="user_email?.errors?.['required']">
+                        It is required field
+                    </div>
+                    <div class="invalid-feedback d-block" *ngIf="user_email?.errors?.['pattern']">
+                        Please enter the valid name
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="user_phone_no">Mobile No</label>
+                <input type="text" name="user_phone_no" id="id3" class="form-control" formControlName="user_phone_no">
+                <div *ngIf="user_phone_no?.touched && user_phone_no?.invalid">
+                    <div class="invalid-feedback d-block" *ngIf="user_phone_no?.errors?.['required']">
+                        It is required field
+                    </div>
+                    <div class="invalid-feedback d-block" *ngIf="user_phone_no?.errors?.['minlength']">
+                        Minimum 10 digits are required
+                    </div>
+                    <div class="invalid-feedback d-block" *ngIf="user_phone_no?.errors?.['maxlength']">
+                        Maximum 10 digits are required
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-check-label mt-4 px-2">Gender:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="user_gender" id="id4" value="male"
+                        formControlName="user_gender">
+                    <label class="form-check-label" for="user_gender">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="user_gender" id="id5" value="female"
+                        formControlName="user_gender">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+                <div *ngIf="user_gender?.touched && user_gender?.invalid">
+                    <div class="invalid-feedback d-block" *ngIf="user_gender?.errors?.['required']">
+                        It is required field
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="col-md-4">
+            <label for="user_pwd">Password</label>
+            <input type="password" name="user_pwd" id="id6" class="form-control" formControlName="user_pwd">
+            <!-- <label for="ConfirmPassword">Confirm Password</label>
+            <input type="password" name="ConfirmPassword" id="id10" class="form-control" formControlName="confirmpassword"> -->
+
+        </div>
+
+        <div>
+            <button type="submit" [disabled]="signUpForm.invalid" class="btn btn-primary mt-4 px-4">Save</button>
+        </div>
+    </form></div>
+</div>

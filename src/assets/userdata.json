@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "5824cdf7-ee02-48b1-8cbf-9806158fd126",
+		"name": "Machine Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15015862"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_name",
+							"value": "akshay",
+							"type": "text"
+						},
+						{
+							"key": "user_email",
+							"value": "testingnew@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "user_contact_no",
+							"value": "8888885465",
+							"type": "text"
+						},
+						{
+							"key": "user_password",
+							"value": "test123",
+							"type": "text"
+						},
+						{
+							"key": "user_gender",
+							"value": "male",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://devrunner.co.in/machine_test/index.php/web_api/Users/Register",
+					"protocol": "https",
+					"host": [
+						"devrunner",
+						"co",
+						"in"
+					],
+					"path": [
+						"machine_test",
+						"index.php",
+						"web_api",
+						"Users",
+						"Register"
+					]
+				},
+				"description": "This api use for user registration"
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\":\"22\",\n\t\"user_name\":\"test update\",\n\t\"user_email\":\"test@gmail.com\",\n\t\"user_contact_no\":\"482600\",\n\t\"user_password\":\"482600\",\n\t\"user_gender\":\"male\"\n}"
+				},
+				"url": {
+					"raw": "https://devrunner.co.in/machine_test/index.php/web_api/Users/update_user",
+					"protocol": "https",
+					"host": [
+						"devrunner",
+						"co",
+						"in"
+					],
+					"path": [
+						"machine_test",
+						"index.php",
+						"web_api",
+						"Users",
+						"update_user"
+					]
+				},
+				"description": "This api use for user update"
+			},
+			"response": []
+		},
+		{
+			"name": "get single user detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devrunner.co.in/machine_test/index.php/web_api/Users/user_detail?user_id=22",
+					"protocol": "https",
+					"host": [
+						"devrunner",
+						"co",
+						"in"
+					],
+					"path": [
+						"machine_test",
+						"index.php",
+						"web_api",
+						"Users",
+						"user_detail"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "22"
+						}
+					]
+				},
+				"description": "This api use for geting all records of single user"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\":\"20\"\n}"
+				},
+				"url": {
+					"raw": "https://devrunner.co.in/machine_test/index.php/web_api/Users/remove_user",
+					"protocol": "https",
+					"host": [
+						"devrunner",
+						"co",
+						"in"
+					],
+					"path": [
+						"machine_test",
+						"index.php",
+						"web_api",
+						"Users",
+						"remove_user"
+					]
+				},
+				"description": "This api use for Delete user"
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN MEHTOD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devrunner.co.in/machine_test/index.php/web_api/Users/login?user_email=test@gmail.com&user_pwd=482600",
+					"protocol": "https",
+					"host": [
+						"devrunner",
+						"co",
+						"in"
+					],
+					"path": [
+						"machine_test",
+						"index.php",
+						"web_api",
+						"Users",
+						"login"
+					],
+					"query": [
+						{
+							"key": "user_email",
+							"value": "test@gmail.com"
+						},
+						{
+							"key": "user_pwd",
+							"value": "482600"
+						}
+					]
+				},
+				"description": "This api use for login"
+			},
+			"response": []
+		},
+		{
+			"name": "get all users record",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://devrunner.co.in/machine_test/index.php/web_api/Users/",
+					"protocol": "https",
+					"host": [
+						"devrunner",
+						"co",
+						"in"
+					],
+					"path": [
+						"machine_test",
+						"index.php",
+						"web_api",
+						"Users",
+						""
+					]
+				},
+				"description": "this api use for fetch all records of users"
+			},
+			"response": []
+		}
+	]
+}
